@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>vinoth| Portfolio Website</title>
+<style>
+:root {
+  --bg: linear-gradient(135deg, #e3f2fd, #f5f7fa);
+  --dark: #1e293b;
+  --accent: #2563eb;
+  --light: #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: var(--bg);
+  color: #444;
+  line-height: 1.6;
+}
+
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(1px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  z-index: 100;
+  border-bottom: 1px solid rgba(220,220,220,0.16);
+}
+
+header h2 {
+  font-size: 18px;
+  color: black;
+  margin: 0;
+  flex-shrink: 0;
+  text-align: left;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hire-me {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+.hire-me:hover {
+  background: #1e40af;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+.menu {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  margin-left: 5px;
+}
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 2px;
+  font-size: 26px;
+  color: var(--dark);
+}
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, black, #1e3a8a);
+  color: #fff;
+}
+.hero img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.hero img:hover {
+  transform: scale(1.08);
+}
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.hero p {
+  opacity: 0.9;
+}
+.grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Only modify Skills section cards */
+#skills .card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--light);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+#skills .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+.skill-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.skill-text h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.skill-text p {
+  margin: 0;
+}
+
+.card {
+  background: var(--light);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+form {
+  max-width: 420px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input,
+textarea,
+button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #1e40af;
+}
+footer {
+  text-align: center;
+  padding: 18px;
+  background: black;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .menu {
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <h2>Portfolio</h2>
+  <div class="header-right">
+    <a href="#contact"><button class="hire-me">Hire Me</button></a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <span class="menu">&#9776;</span>
+  </div>
+</header>
+<section class="hero">
+  <img id="profile" src="https://raw.githubusercontent.com/vinosivetbsc-coder/Vinoth-M/refs/heads/main/IMG_20250823_111254.jpg" alt="Profile" />
+  <h1>Hello, I'm <span style="color: #facc15;">vinoth M</span></h1>
+  <p>Aspiring Web Developer • Learner • Innovator</p>
+</section>
+<section id="about">
+  <h2>About Me</h2>
+  <p style="text-align:center;max-width:700px;margin:auto;">I am a passionate student eager to explore web development, programming, and creative problem-solving. This portfolio highlights my skills, projects, and achievements.</p>
+</section>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML Logo" class="skill-logo" />
+      <div class="skill-text">
+        <h3>HTML</h3>
+        <p>Structured page building</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS Logo" class="skill-logo" />
+      <div class="skill-text">
+        <h3>CSS</h3>
+        <p>Modern responsive design</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript Logo" class="skill-logo" />
+      <div class="skill-text">
+        <h3>JavaScript</h3>
+        <p>Interactive experiences</p>
+      </div>
+    </div>
+
+    <!-- New Skill Cards -->
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1822/1822899.png" alt="Python Logo" class="skill-logo" />
+      <div class="skill-text">
+        <h3>Python</h3>
+        <p>Versatile programming language</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java Logo" class="skill-logo" />
+      <div class="skill-text">
+        <h3>Java</h3>
+        <p>Robust backend development</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C Logo" class="skill-logo" />
+      <div class="skill-text">
+        <h3>C</h3>
+        <p>Low-level programming</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card"><h3>Portfolio Website</h3><p>Responsive personal site</p></div>
+    <div class="card"><h3>Quiz App</h3><p>Fun JS-based quiz</p></div>
+    <div class="card"><h3>To-do List</h3><p>Task manager with storage</p></div>
+  </div>
+</section>
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="grid">
+    <div class="card">
+      <a href="" target="_blank"><img src="https://raw.githubusercontent.com/vinosivetbsc-coder/Vinoth-M/refs/heads/main/Screenshot_20250912_110729.jpg" alt="Certificate" style="max-width:100%;border-radius:10px;"></a>
+      <p>Web Development Fundamentals</p>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea rows="4" placeholder="Message"></textarea>
+    <button>Send Message</button>
+  </form>
+</section>
+<footer>
+  <p>&copy; 2025 vinoth M| © All Rights Reserved</p>
+</footer>
+<script>
+  const menu = document.querySelector(".menu"),
+    nav = document.querySelector("nav ul");
+  menu.onclick = () => nav.classList.toggle("show");
+  document.querySelectorAll("a[href^='#']").forEach((a) =>
+    (a.onclick = (e) => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+      nav.classList.remove("show");
+    })
+  );
+  const profile = document.getElementById("profile"),
+    file = document.getElementById("file");
+  profile.onclick = () => file.click();
+  file.onchange = (e) => {
+    let f = e.target.files[0];
+    if (f) {
+      let r = new FileReader();
+      r.onload = (x) => (profile.src = x.target.result);
+      r.readAsDataURL(f);
+    }
+  };
+</script>
+</body>
+</html>
